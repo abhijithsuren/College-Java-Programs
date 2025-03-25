@@ -1,0 +1,23 @@
+<html>
+<applet code="imageApplet.class" width="500" height="500"></applet>
+</html>
+
+
+import java.applet.Applet;
+import java.awt.Graphics;
+import java.awt.Image;
+public class imageApplet extends Applet{
+    private Image img;
+    @Override
+    public void init(){
+        img=getImage(getDocumentBase(),"images/example.jpg");
+    }
+    @Override
+    public void paint(Graphics g){
+        if(img!=null){
+            g.drawImage(img,50,50,this);
+        }else{
+            g.drawString("image not found",50,50);
+        }
+    }
+}
